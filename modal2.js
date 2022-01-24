@@ -1,4 +1,4 @@
-Vue.component("card",{
+Vue.component("card2",{
     props:{//这里是组件可以接受的参数，也就是相当于面向原型写组件时的配置参数，用户可以传递不同参数，自己定义组件
         cardTitle:{//卡片标题
             // type:String,
@@ -34,7 +34,7 @@ Vue.component("card",{
     `,
     methods:{//这里定义的组件的方法，利用$emit()进行父子组件通信，子组件通过点击事件告诉父组件触发一个自定义事件，$emit()方法第二个参数也可以用来传递数据
         okHandle(){
-            console.log(999);
+            console.log(66);
             this.$emit("ok");
         },
         cancelHandle(){

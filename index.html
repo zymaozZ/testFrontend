@@ -8,6 +8,8 @@
     <script src='./jquery.js'></script>
     <script src='./vue.min.js'></script>
     <script src="./modal.js"></script>
+    <script src="./modal2.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
 </head>
 <body>
     <input id="btn" type="button" value="jquery操作">
@@ -16,9 +18,19 @@
         <div>
             <card :list="list" :card-title="cardTitle" @ok="okMethods" @cancel="cancelMethods"></card>
         </div>
+
+        <div>
+            <card2 :list="list" :card-title="cardTitle" @ok="okMethods" @cancel="cancelMethods"></card2>
+        </div>
+        <my-component></my-component>
  </div>
 
 <script>
+
+
+// Vue.component('my-component', {
+//    template: httpVueLoader('my-component.vue')
+//  });
 
 $('#btn').on('click',function(){
             console.log('jquery操作');
@@ -37,7 +49,10 @@ $('#btn').on('click',function(){
                 cancelMethods:function (){
                     console.log("cancel")    
                 }
-            }
+            },
+            components: {
+          'my-component': httpVueLoader('my-component.vue')
+        }
         });
 </script>
 </body>
