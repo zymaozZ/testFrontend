@@ -9,7 +9,7 @@ Vue.component("card",{
             default:[]
         }
     },
-    // <slot name="modal-content">可以扩展的卡片内容</slot>
+    
     template:`
         <div class="modal">
             <div class="modal-header">
@@ -17,7 +17,7 @@ Vue.component("card",{
             </div>
             <div class="modal-content">
                 <div>
-                    
+                <slot name="modal-content">可以扩展的卡片内容</slot>
                     <ul>
                         <li v-for="(item,index) in list">{{item}}</li>
                     </ul>
