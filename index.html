@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='./jquery.js'></script>
+    <script src='./vue.min.js'></script>
+    <script src="./modal.js"></script>
+</head>
+<body>
+    <input id="btn" type="button" value="jquery操作">
+
+    <div id="app">
+        <div>
+            <card :list="list" :card-title="cardTitle" @ok="okMethods" @cancel="cancelMethods"></card>
+        </div>
+ </div>
+
+<script>
+
+$('#btn').on('click',function(){
+            console.log('jquery操作');
+        });
+        new Vue({
+            el:'#app',
+            data:{
+                cardTitle: "titlesssklajnfkas",
+                list:[1,2,3,4]
+            },
+            methods:{
+                okMethods:function (){
+                    console.log("ok");
+                    console.log(this.list);
+                },
+                cancelMethods:function (){
+                    console.log("cancel")    
+                }
+            }
+        });
+</script>
+</body>
+</html>
